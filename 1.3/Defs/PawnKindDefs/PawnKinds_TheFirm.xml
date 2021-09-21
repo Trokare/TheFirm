@@ -14,6 +14,7 @@
 			<li>Nudist</li>
 		</disallowedTraits>
 		<itemQuality>Normal</itemQuality>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
 		<gearHealthRange>0.7~3.2</gearHealthRange>
 		<techHediffsChance>0.15</techHediffsChance>
 		<techHediffsMoney>700~1200</techHediffsMoney>
@@ -506,7 +507,7 @@
 		<itemQuality>Normal</itemQuality>
 		<weaponMoney>250~500</weaponMoney>
 		<weaponTags>
-			<li>MedievalMeleeAdvanced</li>
+			<li>Industrial_Melee</li>
 		</weaponTags>
 		<apparelMoney>1000~2000</apparelMoney>
 		<apparelRequired>
