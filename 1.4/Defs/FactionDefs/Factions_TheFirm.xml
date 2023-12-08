@@ -4,12 +4,13 @@
   <FactionDef ParentName="FactionBase">
     <defName>TheFirm_FirmBranch</defName>
     <label>The Firm</label>
+    <categoryTag>TheFirm</categoryTag>
     <description>The planetary branch of the Interstellar Conglomerate : The Firm, a giant corporation born in the Urbworlds, is dealing in human resources, security equipement and medical and recreative drugs.</description>
     <pawnSingular>employee</pawnSingular>
     <pawnsPlural>employees</pawnsPlural>
-    <listOrderPriority>21</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
-    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <listOrderPriority>21</listOrderPriority>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>21</configurationListOrderPriority>
     <canMakeRandomly>true</canMakeRandomly>
@@ -32,7 +33,7 @@
       <li>PlayerColony</li>
       <li>Ancients</li>
       <li MayRequire="Ludeon.RimWorld.Royalty">Empire</li>
-	  <li MayRequire="OskarPotocki.VFE.Insectoid">VFE_PlayerOutpost</li>
+			<li MayRequire="OskarPotocki.VFE.Insectoid">VFE_PlayerOutpost</li>
     </permanentEnemyToEveryoneExcept>
     <allowedCultures><li>Astropolitan</li></allowedCultures>
     <structureMemeWeights>
@@ -40,9 +41,11 @@
     </structureMemeWeights>
     <requiredMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
     </requiredMemes>
     <disallowedMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">NaturePrimacy</li>
     </disallowedMemes>
     <disallowedPrecepts>
       <li>Slavery_Classic</li>
@@ -55,14 +58,22 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Execution_Horrible</li>
     </disallowedPrecepts>
     <techLevel>Industrial</techLevel>
-	<backstoryFilters>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Waster MayRequire="Ludeon.RimWorld.Biotech">0.10</Waster>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.10</Hussar>
+        <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.10</Dirtmole>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.05</Neanderthal>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.05</Genie>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
 	  <li>
 		<categories>
 		  <li>Offworld</li>
 		</categories>
 	  </li>
 	</backstoryFilters>
-    <geneticVariance>0.8</geneticVariance>
     <apparelStuffFilter>
       <stuffCategoriesToAllow>
         <li>Metallic</li>
@@ -220,16 +231,54 @@
 			</options>
 		</li>
     </pawnGroupMakers>
+    <disallowedRaidAgeRestrictions>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
+    </disallowedRaidAgeRestrictions>
     <modExtensions>
-      <li Class="KCSG.FactionSettlement">
-         <useStructureLayout>True</useStructureLayout>
-         <chooseFromlayouts>
-            <li>TheFirmSettlement1</li>
-            <li>TheFirmSettlement2</li>
-            <li>TheFirmSettlement3</li>
-         </chooseFromlayouts>
+      <li Class="KCSG.CustomGenOption">
+        <!-- The following option will prevent lake/marsh and
+         patches in general to generate. Use this if you 
+         don't want your settlement to have to use bridges -->
+        <preventBridgeable>true</preventBridgeable>
+        <!-- If you want the structure to not be generated in the center,
+         but in a free of mountain space (will default to center if
+         no such space exist)-->
+        <tryFindFreeArea>True</tryFindFreeArea>
+        <!-- Premade resolver, you can add or remove any of them, and 
+         also add custom ones -->
+        <symbolResolvers>
+          <li>kcsg_randomdamage</li>
+          <li>kcsg_randomfilth</li>
+          <li>kcsg_randomterrainremoval</li>
+          <li>kcsg_randomroofremoval</li>
+          <li>kcsg_randomitemremoval</li>
+          <li>kcsg_removeperishable</li>
+          <li>kcsg_destroyrefuelablelightsource</li>
+          <li>kcsg_scatterstuffaround</li>
+        </symbolResolvers>
+        <!-- Only if tou use kcsg_randomfilth -->
+        <filthTypes>
+          <li>Filth_Dirt</li>
+          <li>Filth_Trash</li>
+          <li>Filth_RubbleBuilding</li>
+        </filthTypes>
+        <!-- Only if tou use kcsg_scatterstuffaround-->
+        <scatterThings>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Yayo</li>
+          <li>Flake</li>
+          <li>GoJuice</li>
+          <li>WakeUp</li>
+        </scatterThings>
+        <scatterChance>0.02</scatterChance>
+        <chooseFromlayouts>
+          <li>TheFirmSettlement1</li>
+          <li>TheFirmSettlement2</li>
+          <li>TheFirmSettlement3</li>
+        </chooseFromlayouts>
       </li>
-	</modExtensions>
+    </modExtensions>
   </FactionDef>
 
 </Defs>

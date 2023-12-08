@@ -1,0 +1,8 @@
+# Changelog for The Firm
+
+1.1.0.0 - Added custom quests, new settlement maps and a few changes in parameters and icones
+
+1.0.1.0 - Added achivements & support for VFE-Insectoids + refined the industrial melee weapon choice
+
+1.0.0.0 - First publish
+

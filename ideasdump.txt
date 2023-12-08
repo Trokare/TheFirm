@@ -2,7 +2,7 @@ The Firm is, of course, a dressed up version of the mafia
 
 They do send trader and sell : Slave, Drugs, Organs & Weapons and buy luxuries : drugs, bionics, Gold, Jade, Uranium, Elephant Tusk, Thrumbo Horns, Royal Insect Jelly, Rare Leathers (thrumbo, fox, chinchilla, Lizard, devilstrand, hyperwaves, synthreads, etc) + artifacts etc.
 
-They also have their own trade ship with the same items
+They also have their own orbital trade ship with the same items
 
 "Bad" pawns
 - Hard to recruit and hard to enslave
@@ -16,7 +16,7 @@ Settlements :
 - Weapons workshop > Done
 - Private Villa of the CEO
 
-- Scenario
+- Scenario > Done
 
 Quests : 
 - Slave delivery
